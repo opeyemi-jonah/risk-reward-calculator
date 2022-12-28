@@ -1,0 +1,30 @@
+<div class="container">
+    <form [formGroup]="calculatorForm" class="form-container">
+        <mat-card class="calculator">
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Account Balance</mat-label>
+                            <input matInput formControlName="accountBalance" type="text" placeholder="Amount">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-md-6">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Risk USD | %</mat-label>
+                                <mat-select formControlName="risk">
+                                    <mat-option *ngFor="let riskopt of riskOpts" [value]="riskopt.value">
+                                    {{riskopt.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+
+            </mat-card-content>
+        </mat-card>        
+    </form>
+
+</div>
