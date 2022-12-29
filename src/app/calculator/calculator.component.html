@@ -3,22 +3,66 @@
         <mat-card class="calculator">
             <mat-card-content>
                 <div class="row">
-                    <div class="col-md-6">
-                        <mat-form-field class="example-full-width">
+                    <!-- Left Column -->
+                    <div class="col-md-4">
+
+                        <mat-form-field class="m-2">
                             <mat-label>Account Balance</mat-label>
-                            <input matInput formControlName="accountBalance" type="text" placeholder="Amount">
+                            <input matInput formControlName="accountBalance" type="text">
                         </mat-form-field>
+
+                        <mat-form-field class="m-2" appearance="fill">
+                            <mat-label>Instrument</mat-label>
+                                <mat-select formControlName="instruments">
+                                    <mat-option *ngFor="let instrument of instruments" [value]="instrument.pair">
+                                    {{instrument.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field class="m-2">
+                            <mat-label>Stop Loss (pips)</mat-label>
+                            <input matInput formControlName="stopLoss" type="text">
+                        </mat-form-field>
+
                     </div>
 
-                    <div class="col-md-6">
+                    <!-- Middle Column -->
+                    <div class="col-md-4 pt-2">
                         <mat-form-field appearance="fill">
                             <mat-label>Risk USD | %</mat-label>
-                                <mat-select formControlName="risk">
+                                <mat-select formControlName="riskFormat">
                                     <mat-option *ngFor="let riskopt of riskOpts" [value]="riskopt.value">
                                     {{riskopt.viewValue}}
                                     </mat-option>
                                 </mat-select>
                         </mat-form-field>
+
+                        <mat-form-field class="m-2 pt-2">
+                            <mat-label>Open Price</mat-label>
+                            <input matInput formControlName="openPrice" type="text">
+                        </mat-form-field>
+
+                        <mat-form-field class="m-2">
+                            <mat-label>Contract Size</mat-label>
+                            <input matInput formControlName="contractSize" type="number">
+                        </mat-form-field>
+
+                        <button (click)="calculate()" class="calculate-btn" color="warn" mat-raised-button>calculate</button>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="col-md-4" >
+                        <mat-form-field appearance="fill" class="m-2">
+                            <mat-label>Risk Amount</mat-label>
+                            <input matInput formControlName="risk" type="text">
+                        </mat-form-field>
+                        
+                        <mat-form-field class="m-2">
+                            <mat-label>Stop Loss Price</mat-label>
+                            <input matInput formControlName="stopLossPrice" type="text">
+                        </mat-form-field>
+
                     </div>
 
                 </div>

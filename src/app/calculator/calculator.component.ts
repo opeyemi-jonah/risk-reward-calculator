@@ -29,6 +29,8 @@ export class CalculatorComponent {
   posApproxLotSize: number = 0;
   riskAmount: number = 0;
 
+  
+
   riskOpts: RiskOptions[] = [
     {value: 'USD', viewValue: '$'},
     {value: 'percent', viewValue: '%'},
@@ -53,7 +55,7 @@ export class CalculatorComponent {
 
   calculatorForm = new FormGroup({
     instruments:new FormControl(this.instruments[1]),
-    currency: new FormControl(),
+    currency: new FormControl(this.currency[0]),
     accountBalance: new FormControl(''),
     risk: new FormControl(''),
     riskFormat: new FormControl(this.riskOpts[0]),
@@ -67,6 +69,7 @@ export class CalculatorComponent {
 
   calculate() {
     console.log('Solution is processed')
+    
   }
 
 
