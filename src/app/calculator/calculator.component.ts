@@ -23,11 +23,15 @@ interface Currency {
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent {
-
+  //Output
   preciseLotSize: number = 0;
   negApproxLotSize: number = 0;
   posApproxLotSize: number = 0;
   riskAmount: number = 0;
+
+  xAccountBalance: number= 0;
+  xInstrument: any;
+
 
   
 
@@ -65,10 +69,12 @@ export class CalculatorComponent {
     contractSize: new FormControl(''),
 
   })
-
+  
 
   calculate() {
     console.log('Solution is processed')
+    this.xInstrument = this.calculatorForm.controls.instruments.value;
+    console.log(this.xInstrument)
     
   }
 

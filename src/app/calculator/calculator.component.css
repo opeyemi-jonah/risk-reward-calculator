@@ -1,6 +1,6 @@
 .calculator{
-    margin: 150px;
-    height: 70vh;
+    margin: 10px 150px;
+    height: 50vh;
     background-color: skyblue;
 }
 
@@ -8,4 +8,17 @@
     width: 50%;
     height: 8vh;
     margin: 0px 50px;
+}
+
+.result-container{
+    background-color: peachpuff;
+    color: black;
+    font-size: 20px;
+    margin: 10px 150px;
+    padding: 0px 30px;
+
+}
+
+.remove-margin{
+    margin: 0px;
 }

@@ -8,7 +8,7 @@
 
                         <mat-form-field class="m-2">
                             <mat-label>Account Balance</mat-label>
-                            <input matInput formControlName="accountBalance" type="text">
+                            <input matInput formControlName="accountBalance" type="text" [(ngModel)]="xAccountBalance">
                         </mat-form-field>
 
                         <mat-form-field class="m-2" appearance="fill">
@@ -70,5 +70,24 @@
             </mat-card-content>
         </mat-card>        
     </form>
+    <div class="result-container row">
+        <div class="col-md-4">
+            <div class="d-inline-flex"><h2 class="remove-margin">-- Lot Size:</h2><p class="remove-margin px-2 d-inline-flex align-items-center">{{negApproxLotSize}}</p></div>
 
+        </div>
+
+        <div class="col-md-4">
+        <div class="d-inline-flex"><h2 class="remove-margin">++ Lot Size:</h2><p class="remove-margin px-2 d-inline-flex align-items-center">{{posApproxLotSize}}</p></div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="d-inline-flex"><h2 class="remove-margin">Precise Lot Size:</h2><p class="remove-margin px-2 d-inline-flex align-items-center">{{preciseLotSize}}</p></div>
+            <div class="d-inline-flex"><h2 class="remove-margin">Risk Amount:</h2><p class="remove-margin px-2 d-inline-flex align-items-center">{{riskAmount | currency}}</p></div>
+        </div>
+
+        <p>{{xAccountBalance | currency}}</p>
+        <p>{{xInstrument}}</p>
+
+       
+    </div>
 </div>
